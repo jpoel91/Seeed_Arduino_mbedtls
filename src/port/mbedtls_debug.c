@@ -30,11 +30,11 @@ static void mbedtls_esp_debug(void *ctx, int level,
 
 void mbedtls_esp_enable_debug_log(mbedtls_ssl_config *conf, int threshold)
 {
-    unsigned char level = 0;
+    // unsigned char level = 0;
     mbedtls_debug_set_threshold(threshold);
     mbedtls_ssl_conf_dbg(conf, mbedtls_esp_debug, NULL);
-    if (threshold < 6)
-        level = threshold;
+    // if (threshold < 6)
+    //     level = threshold;
     // esp_log_level_set(TAG, level);
 }
 
@@ -65,22 +65,22 @@ static void mbedtls_esp_debug(void *ctx, int level,
     switch(level) {
     case 1:
         // ESP_LOGW(TAG, "%s:%d %s", file, line, str);
-        xprintf("%s:%d %s\r\n", file, line, str);
+        // xprintf("%s:%d %s\r\n", file, line, str);
         break;
     case 2:
         // ESP_LOGI(TAG, "%s:%d %s", file, line, str);
-        xprintf("%s:%d %s\r\n", file, line, str);
+        // xprintf("%s:%d %s\r\n", file, line, str);
         break;
     case 3:
         // ESP_LOGD(TAG, "%s:%d %s", file, line, str);
-        xprintf("%s:%d %s\r\n", file, line, str);
+        // xprintf("%s:%d %s\r\n", file, line, str);
         break;
     case 4:
         // ESP_LOGV(TAG, "%s:%d %s", file, line, str);
-        xprintf("%s:%d %s\r\n", file, line, str);
+        // xprintf("%s:%d %s\r\n", file, line, str);
         break;
     default:
-        ESP_LOGE(TAG, "Unexpected log level %d: %s", level, str);
+        // ESP_LOGE(TAG, "Unexpected log level %d: %s", level, str);
         break;
     }
 }
