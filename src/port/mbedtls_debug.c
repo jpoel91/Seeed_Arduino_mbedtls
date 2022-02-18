@@ -22,7 +22,7 @@
 //#include "esp_hal_log.h"
 
 #ifdef CONFIG_MBEDTLS_DEBUG
-static const char *TAG = "mbedtls";
+// static const char *TAG = "mbedtls";
 
 static void mbedtls_esp_debug(void *ctx, int level,
                               const char *file, int line,
